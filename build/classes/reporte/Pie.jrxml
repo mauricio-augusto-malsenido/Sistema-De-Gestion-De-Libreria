@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89c9db0d-7aae-43aa-89cd-f69b9708a9a4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IdFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select f.BrutoCompra,f.NetoCompra,IvaCompra
+from facturacompra as f
+where f.IdFacturaCompra=$P{IdFac};]]>
+	</queryString>
+	<field name="BrutoCompra" class="java.lang.Float"/>
+	<field name="NetoCompra" class="java.lang.Float"/>
+	<field name="IvaCompra" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5e383aeb-61fd-42a5-b08e-4d7b45b6c306" x="28" y="11" width="56" height="20"/>
+				<textElement/>
+				<text><![CDATA[Bruto : $]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9a764284-47f8-4e06-876d-97fa3c0dd8e3" x="84" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BrutoCompra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2c526e66-ea71-4920-a2eb-3afcbfb1a1cf" x="184" y="11" width="35" height="20"/>
+				<textElement/>
+				<text><![CDATA[Iva: $]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="800483a7-b62d-4910-95d5-038ee1c0d3e8" x="219" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{IvaCompra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1ac76977-e002-4ebc-a11f-824e54ed857d" x="331" y="11" width="42" height="20"/>
+				<textElement/>
+				<text><![CDATA[Neto: $]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="1c639960-8417-4147-a0a4-bbd562bcd38f" x="373" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NetoCompra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0556df8a-96bb-41e5-bdf7-201a479dfb3a">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="315"/>
+	<parameter name="idFactura" class="java.lang.String"/>
+	<parameter name="proveedor" class="java.lang.String"/>
+	<parameter name="importe" class="java.lang.String"/>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="182" height="117" uuid="5937dba2-c266-4d14-9eb6-9b547857c105"/>
+				<imageExpression><![CDATA["C:\\Users\\SEBASTIAN\\Documents\\NetBeansProjects\\libreria\\src\\recursos\\l quijote.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="182" y="0" width="268" height="74" uuid="6b5be184-2f5a-4d55-a747-5235bb8ee6c1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Libreria El Quijote
+Calle Sin Nombre 123
+San Miguel de Tucuman 
+Tucuman - Argentina
+Cp:4000
+Tel: 0303456								]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="75" width="198" height="42" uuid="09b6ee39-9d86-4733-be85-805af1451879"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Factura de compra]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="60" uuid="5ffe225b-4f9e-4346-90a7-b76acd43c9b4"/>
+			</rectangle>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="51" y="20" width="114" height="20" uuid="5094a70e-675a-4221-91b8-78c6bad36d19"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="20" width="40" height="20" uuid="b0458476-a6f6-4d5e-b276-7c971f6fdce9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="0" width="114" height="20" uuid="f7ac78ba-b93a-4d87-ae44-f7fad350dddf"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="40" width="65" height="20" uuid="1dd4bc83-240f-456f-8d2c-64252d5aa918"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proveedor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="125" y="0" width="90" height="20" uuid="285dc5e2-7b03-413a-a10a-baed39e9f20c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{idFactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="40" width="100" height="20" uuid="435ccb6d-5ad3-4503-a771-1fd99a052013"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{proveedor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="405" height="20" uuid="468901ae-b6a4-4153-b6ff-27bc659362f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Titulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="40" width="150" height="20" uuid="b0e5f956-77ed-4bac-8a87-dc78a33edb9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="65b215a5-5a5f-454b-b937-904ad681e4c9"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="405" height="20" uuid="88bd45c4-4c98-4ddb-ae72-49ac01bb8a0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="150" height="20" uuid="08da727e-cafd-4e1e-8a48-275846ef3f11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="308" y="0" width="97" height="20" uuid="f9d1f526-8a22-4f97-92e9-bd10176833a6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe Total:   $]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="405" y="0" width="150" height="20" uuid="4bfaf2a0-a3ec-479c-8746-d95c729c5c82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{importe}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

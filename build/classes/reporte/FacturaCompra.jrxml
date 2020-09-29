@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9eec82ef-2d37-403f-b92b-56106044e4ef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\SEBASTIAN\\Documents\\NetBeansProjects\\libreria\\src\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IdFac" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from pedidocompra;]]>
+	</queryString>
+	<field name="idPedidoCompra" class="java.lang.Integer"/>
+	<field name="FechaPedido" class="java.sql.Date"/>
+	<field name="IdProveedorCompra" class="java.lang.Integer"/>
+	<title>
+		<band height="56" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="3636ab97-05ad-4093-8c11-d44efd4cd786" x="0" y="0" width="132" height="56"/>
+				<subreportParameter name="idFac">
+					<subreportParameterExpression><![CDATA[$P{IdFac}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cabecera.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<summary>
+		<band height="102" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="c7fbc12b-9cd8-4ea5-a884-6449637969ce" x="0" y="0" width="132" height="100"/>
+				<subreportParameter name="IdFac">
+					<subreportParameterExpression><![CDATA[$P{IdFac}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "LineaPedido.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>
