@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="208194ff-1fd2-42dc-968b-9b377b34cbf9">
+	<property name="ireport.zoom" value="5.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     libro.`TituloLibro` AS libro_TituloLibro,
+     FacturaVenta_Libro.`Cantidad` AS FacturaVenta_Libro_Cantidad,
+     FacturaVenta_Libro.`Precio` AS FacturaVenta_Libro_Precio,
+     FacturaVenta_Libro.`Subtotal` AS FacturaVenta_Libro_Subtotal
+FROM
+     `libro` libro INNER JOIN `FacturaVenta_Libro` FacturaVenta_Libro ON libro.`IdLibro` = FacturaVenta_Libro.`IdLibro`
+WHERE
+     FacturaVenta_Libro.IdFacturaVenta = $P{idFac}]]>
+	</queryString>
+	<field name="IdLibro" class="java.lang.Integer"/>
+	<field name="TituloLibro" class="java.lang.String"/>
+	<field name="EdicionLibro" class="java.lang.String"/>
+	<field name="AñoLibro" class="java.lang.Integer"/>
+	<field name="PrecioLibro" class="java.lang.Float"/>
+	<field name="StockLibro" class="java.lang.Integer"/>
+	<field name="StockCritico" class="java.lang.Integer"/>
+	<field name="StockMax" class="java.lang.Integer"/>
+	<field name="EstadoLibro" class="java.lang.Boolean"/>
+	<field name="CostoLibro" class="java.lang.Float"/>
+	<field name="IdEditorialLibro" class="java.lang.Integer"/>
+	<field name="IdAutorLibro" class="java.lang.Integer"/>
+	<field name="IdGeneroLibro" class="java.lang.Integer"/>
+	<field name="IdFacturaVenta_Libro" class="java.lang.Integer"/>
+	<field name="Cantidad" class="java.lang.Integer"/>
+	<field name="Precio" class="java.lang.Float"/>
+	<field name="Subtotal" class="java.lang.Float"/>
+	<field name="IdFacturaVenta" class="java.lang.Integer"/>
+	<field name="libro_TituloLibro" class="java.lang.String"/>
+	<field name="FacturaVenta_Libro_Cantidad" class="java.lang.Integer"/>
+	<field name="FacturaVenta_Libro_Precio" class="java.lang.Float"/>
+	<field name="FacturaVenta_Libro_Subtotal" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="980bdfff-d6b1-433d-828a-af6af82edad6" x="0" y="0" width="200" height="20"/>
+				<textElement/>
+				<text><![CDATA[Titulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="93772738-3a34-4882-8cc5-c30cb2e828f6" x="200" y="1" width="56" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a33f3020-8300-47d4-a195-22f2526c6c0a" x="256" y="1" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4795fc82-c22e-4477-a1ed-dd6184676621" x="356" y="1" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[SubTotal]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="34ed2083-63ce-4c28-be99-1f07bb14e7a7" x="0" y="21" width="456" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="679736f0-c0fb-4b62-b192-94b6b1b8c4d8" x="2" y="1" width="454" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a8e9693f-ca25-4b1d-96ea-38ea9bb322a9" x="2" y="0" width="198" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TituloLibro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3cd77d0e-907d-45fa-b4eb-b890c58148f5" x="200" y="0" width="56" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FacturaVenta_Libro_Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f0e5a4a3-00cd-48ff-9c7a-47a906ebff23" x="256" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FacturaVenta_Libro_Precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8b0ac1a9-ede9-4090-9d77-c8c376b39694" x="356" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FacturaVenta_Libro_Subtotal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="679736f0-c0fb-4b62-b192-94b6b1b8c4d8" x="0" y="20" width="456" height="1"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="024a276e-4f03-4b24-9bab-33321af47ca6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select *from facturaVenta where IdFacturaVenta=$P{idFac}]]>
+	</queryString>
+	<field name="IdFacturaVenta" class="java.lang.Integer"/>
+	<field name="FechaFacturaVenta" class="java.sql.Date"/>
+	<field name="BrutoFacturaVenta" class="java.lang.Float"/>
+	<field name="IvaFacturaVenta" class="java.lang.Float"/>
+	<field name="TotalFacturaVenta" class="java.lang.Float"/>
+	<field name="Anulada" class="java.lang.Boolean"/>
+	<field name="IdCliente" class="java.lang.Integer"/>
+	<field name="IdEmpleado" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8c49912f-1710-45f7-808a-7892ae4e63f4" x="314" y="1" width="42" height="20"/>
+				<textElement/>
+				<text><![CDATA[Bruto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6857e474-286b-4e06-ac75-6a2745f0e78c" x="356" y="1" width="135" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BrutoFacturaVenta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4f42fe2e-e4f1-4d5d-a176-3ecf3509bdf8" x="314" y="21" width="42" height="20"/>
+				<textElement/>
+				<text><![CDATA[IVA : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="399d6457-660e-4ef5-916e-c42c98b3e45e" x="356" y="21" width="135" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{IvaFacturaVenta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="869a3d2c-b9d9-4077-8723-2e68a369b936" x="314" y="41" width="42" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7ca4cea6-6128-4718-ac8f-3af7dbec9b48" x="356" y="41" width="135" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TotalFacturaVenta}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="6620f3b4-725a-4dd7-963f-b095148dbc2d" x="0" y="61" width="583" height="1"/>
+			</line>
+		</band>
+	</title>
+</jasperReport>

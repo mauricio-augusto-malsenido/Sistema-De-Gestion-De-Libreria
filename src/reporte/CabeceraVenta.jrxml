@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f24dc78d-13b7-4d15-bd04-206fa1ac2667">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="62"/>
+	<parameter name="idFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select fv.IdFacturaVenta,fv.FechaFacturaVenta,e.NombreEmpleado,c.NombreCliente,tc.NombreTipoCliente,tf.NombreTipoFacturaVenta 
+from facturaventa as fv inner join empleado as e ON e.IdEmpleado=fv.IdEmpleado
+inner join cliente as c ON fv.IdCliente=c.IdCliente
+inner join tipocliente as tc ON c.IdTipoCliente=tc.IdTipoCliente
+inner join tipofacturaventa as tf ON tc.IdTipoFacturaVenta=tf.IdTipoFacturaVenta
+
+where 
+fv.IdFacturaVenta=$P{idFac};]]>
+	</queryString>
+	<field name="IdFacturaVenta" class="java.lang.Integer"/>
+	<field name="FechaFacturaVenta" class="java.sql.Date"/>
+	<field name="NombreEmpleado" class="java.lang.String"/>
+	<field name="NombreCliente" class="java.lang.String"/>
+	<field name="NombreTipoCliente" class="java.lang.String"/>
+	<field name="NombreTipoFacturaVenta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="182" height="117" uuid="f0fd77bc-ebda-4b4b-b18c-6b58dc7c11aa"/>
+				<imageExpression><![CDATA["C:\\Users\\SEBASTIAN\\Documents\\NetBeansProjects\\libreria\\src\\recursos\\l quijote.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="182" y="17" width="268" height="74" uuid="6c5d27ba-0537-4e07-ac4f-a83aef51ce02"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Libreria El Quijote
+Calle Sin Nombre 123
+San Miguel de Tucuman 
+Tucuman - Argentina
+Cp:4000
+Tel: 0303456								]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="231" y="0" width="85" height="66" uuid="c583a733-6e97-432c-8f8c-bc102a4107a5"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="231" height="66" uuid="6eefb225-a3e3-4706-a21e-0b6356f04269"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="316" y="0" width="262" height="66" uuid="188f0c68-fa3e-4990-b4ba-351fdc50909e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="0" width="65" height="20" uuid="04322338-8970-4cb2-9014-ee8ac36ba9d6"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nro_Factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="50" height="20" uuid="6e851016-1588-45e1-a852-ed9f0e63a1eb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="40" width="50" height="20" uuid="29a3ef71-b665-4cb5-b2c1-9cf320adc42c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Empleado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="10" width="44" height="20" uuid="0555bfb5-d8f2-4f96-bdf6-f892dcd985b9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="30" width="63" height="20" uuid="e1418a95-3b11-482a-a581-7d599802c3f2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Tipo_Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="0" width="107" height="20" uuid="9fe64b82-2888-4061-8692-8f557ba6b025"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IdFacturaVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="20" width="122" height="20" uuid="78b364e5-0863-4a07-96dc-cd6da3a6bf89"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FechaFacturaVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="10" width="51" height="50" uuid="c4f52737-70ca-4e44-a55c-74b916aea2e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NombreTipoFacturaVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="10" width="195" height="20" uuid="6f0f5c57-6f3a-4688-8870-5242270306e6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="30" width="176" height="20" uuid="59fe74d6-6c02-4c0c-81bc-2ab71b1a72fc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NombreTipoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="40" width="156" height="20" uuid="3168ddf6-d780-4436-9964-ba23b1a9d75c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NombreEmpleado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

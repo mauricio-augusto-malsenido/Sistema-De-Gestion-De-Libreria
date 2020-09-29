@@ -1,0 +1,325 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x60f3818e, pid=5312, tid=6968
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_45-b15) (build 1.8.0_45-b15)
+# Java VM: Java HotSpot(TM) Client VM (25.45-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x16818e]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x018bd000):  JavaThread "main" [_thread_in_vm, id=6968, stack(0x01730000,0x01780000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x144c9914
+
+Registers:
+EAX=0x1413e670, EBX=0x018bd3f0, ECX=0x0000001a, EDX=0x144c9880
+ESP=0x0177e278, EBP=0x0177e4c0, ESI=0x00000001, EDI=0x010b09d0
+EIP=0x60f3818e, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0177e278)
+0x0177e278:   018bd000 018bd000 14cc9978 60e7b9ea
+0x0177e288:   018bd000 00000006 00000004 018bd000
+0x0177e298:   14143440 60ed34fb 156faba0 00000000
+0x0177e2a8:   156ad888 010a0048 14cc96c8 018bd000
+0x0177e2b8:   0177e5a4 03c3edf0 00000001 00000001
+0x0177e2c8:   0177e2e0 60f4267e 018bd80c 0177e324
+0x0177e2d8:   018bd000 0177e31c 0177e2fc 60f4274f
+0x0177e2e8:   14cc96c8 018bd000 00000001 0177e324 
+
+Instructions: (pc=0x60f3818e)
+0x60f3816e:   01 75 10 c7 03 0c 00 00 00 c7 85 c8 fe ff ff 01
+0x60f3817e:   00 00 00 8b 55 08 8b 42 04 0f b7 48 1a 8b 50 08
+0x60f3818e:   8b 44 8a 2c 6a 01 50 8d 8d 88 fe ff ff e8 70 64
+0x60f3819e:   00 00 80 bd 98 fe ff ff 00 75 41 8b 8d c8 fe ff 
+
+
+Register to memory mapping:
+
+EAX=0x1413e670 is pointing into metadata
+EBX=0x018bd3f0 is an unknown value
+ECX=0x0000001a is an unknown value
+EDX=0x144c9880 is an unknown value
+ESP=0x0177e278 is pointing into the stack for thread: 0x018bd000
+EBP=0x0177e4c0 is pointing into the stack for thread: 0x018bd000
+ESI=0x00000001 is an unknown value
+EDI=0x010b09d0 is an unknown value
+
+
+Stack: [0x01730000,0x01780000],  sp=0x0177e278,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x16818e]
+V  [jvm.dll+0xcc477]
+V  [jvm.dll+0xcc804]
+V  [jvm.dll+0xcc89b]
+V  [jvm.dll+0xbc366]
+V  [jvm.dll+0x4e55a]
+V  [jvm.dll+0x4ea63]
+V  [jvm.dll+0x4fabd]
+V  [jvm.dll+0x5020a]
+V  [jvm.dll+0x51430]
+V  [jvm.dll+0x5147a]
+V  [jvm.dll+0xab668]
+V  [jvm.dll+0x7f8c2]
+V  [jvm.dll+0x7faa7]
+j  sun.reflect.ClassDefiner.defineClass(Ljava/lang/String;[BIILjava/lang/ClassLoader;)Ljava/lang/Class;+0
+j  sun.reflect.MethodAccessorGenerator$1.run()Lsun/reflect/MagicAccessorImpl;+21
+j  sun.reflect.MethodAccessorGenerator$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155cb5]
+V  [jvm.dll+0x21b12e]
+V  [jvm.dll+0x155d4e]
+V  [jvm.dll+0x106fbf]
+C  [java.dll+0x1015]
+j  sun.reflect.MethodAccessorGenerator.generate(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;Ljava/lang/Class;[Ljava/lang/Class;IZZLjava/lang/Class;)Lsun/reflect/MagicAccessorImpl;+755
+j  sun.reflect.MethodAccessorGenerator.generateConstructor(Ljava/lang/Class;[Ljava/lang/Class;[Ljava/lang/Class;I)Lsun/reflect/ConstructorAccessor;+14
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+65
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+79
+j  java.awt.AWTKeyStroke.getCachedStroke(CIIZ)Ljava/awt/AWTKeyStroke;+73
+j  java.awt.AWTKeyStroke.getAWTKeyStroke(Ljava/lang/String;)Ljava/awt/AWTKeyStroke;+361
+j  javax.swing.KeyStroke.getKeyStroke(Ljava/lang/String;)Ljavax/swing/KeyStroke;+24
+j  javax.swing.LookAndFeel.loadKeyBindings(Ljavax/swing/InputMap;[Ljava/lang/Object;)V+43
+j  javax.swing.LookAndFeel.makeInputMap([Ljava/lang/Object;)Ljavax/swing/InputMap;+10
+j  javax.swing.UIDefaults$LazyInputMap.createValue(Ljavax/swing/UIDefaults;)Ljava/lang/Object;+11
+j  javax.swing.UIDefaults.getFromHashtable(Ljava/lang/Object;)Ljava/lang/Object;+126
+j  javax.swing.UIDefaults.get(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;+2
+j  javax.swing.MultiUIDefaults.get(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;+50
+j  javax.swing.UIManager.get(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;+5
+j  sun.swing.DefaultLookup.get(Ljavax/swing/JComponent;Ljavax/swing/plaf/ComponentUI;Ljava/lang/String;)Ljava/lang/Object;+33
+j  javax.swing.plaf.basic.BasicTextUI.getInputMap()Ljavax/swing/InputMap;+35
+j  javax.swing.plaf.basic.BasicTextUI.installKeyboardActions()V+12
+j  javax.swing.plaf.basic.BasicTextUI.installUI(Ljavax/swing/JComponent;)V+110
+j  javax.swing.JComponent.setUI(Ljavax/swing/plaf/ComponentUI;)V+39
+j  javax.swing.text.JTextComponent.setUI(Ljavax/swing/plaf/TextUI;)V+2
+j  javax.swing.text.JTextComponent.updateUI()V+8
+j  javax.swing.text.JTextComponent.<init>()V+62
+j  javax.swing.JTextField.<init>(Ljavax/swing/text/Document;Ljava/lang/String;I)V+1
+j  javax.swing.JTextField.<init>()V+4
+j  libreria.ventanaPrincipal.initComponents()V+93
+j  libreria.ventanaPrincipal.<init>()V+27
+j  libreria.Libreria.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155cb5]
+V  [jvm.dll+0x21b12e]
+V  [jvm.dll+0x155d4e]
+V  [jvm.dll+0xdac47]
+V  [jvm.dll+0xe31ef]
+C  [java.exe+0x228d]
+C  [java.exe+0xadef]
+C  [java.exe+0xae79]
+C  [kernel32.dll+0x4ee1c]
+C  [ntdll.dll+0x6399b]
+C  [ntdll.dll+0x6396e]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.reflect.ClassDefiner.defineClass(Ljava/lang/String;[BIILjava/lang/ClassLoader;)Ljava/lang/Class;+0
+j  sun.reflect.MethodAccessorGenerator$1.run()Lsun/reflect/MagicAccessorImpl;+21
+j  sun.reflect.MethodAccessorGenerator$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;+0
+j  sun.reflect.MethodAccessorGenerator.generate(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;Ljava/lang/Class;[Ljava/lang/Class;IZZLjava/lang/Class;)Lsun/reflect/MagicAccessorImpl;+755
+j  sun.reflect.MethodAccessorGenerator.generateConstructor(Ljava/lang/Class;[Ljava/lang/Class;[Ljava/lang/Class;I)Lsun/reflect/ConstructorAccessor;+14
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+65
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+79
+j  java.awt.AWTKeyStroke.getCachedStroke(CIIZ)Ljava/awt/AWTKeyStroke;+73
+j  java.awt.AWTKeyStroke.getAWTKeyStroke(Ljava/lang/String;)Ljava/awt/AWTKeyStroke;+361
+j  javax.swing.KeyStroke.getKeyStroke(Ljava/lang/String;)Ljavax/swing/KeyStroke;+24
+j  javax.swing.LookAndFeel.loadKeyBindings(Ljavax/swing/InputMap;[Ljava/lang/Object;)V+43
+j  javax.swing.LookAndFeel.makeInputMap([Ljava/lang/Object;)Ljavax/swing/InputMap;+10
+j  javax.swing.UIDefaults$LazyInputMap.createValue(Ljavax/swing/UIDefaults;)Ljava/lang/Object;+11
+j  javax.swing.UIDefaults.getFromHashtable(Ljava/lang/Object;)Ljava/lang/Object;+126
+j  javax.swing.UIDefaults.get(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;+2
+j  javax.swing.MultiUIDefaults.get(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;+50
+j  javax.swing.UIManager.get(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;+5
+j  sun.swing.DefaultLookup.get(Ljavax/swing/JComponent;Ljavax/swing/plaf/ComponentUI;Ljava/lang/String;)Ljava/lang/Object;+33
+j  javax.swing.plaf.basic.BasicTextUI.getInputMap()Ljavax/swing/InputMap;+35
+j  javax.swing.plaf.basic.BasicTextUI.installKeyboardActions()V+12
+j  javax.swing.plaf.basic.BasicTextUI.installUI(Ljavax/swing/JComponent;)V+110
+j  javax.swing.JComponent.setUI(Ljavax/swing/plaf/ComponentUI;)V+39
+j  javax.swing.text.JTextComponent.setUI(Ljavax/swing/plaf/TextUI;)V+2
+j  javax.swing.text.JTextComponent.updateUI()V+8
+j  javax.swing.text.JTextComponent.<init>()V+62
+j  javax.swing.JTextField.<init>(Ljavax/swing/text/Document;Ljava/lang/String;I)V+1
+j  javax.swing.JTextField.<init>()V+4
+j  libreria.ventanaPrincipal.initComponents()V+93
+j  libreria.ventanaPrincipal.<init>()V+27
+j  libreria.Libreria.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x15703c00 JavaThread "AWT-Windows" daemon [_thread_in_native, id=8176, stack(0x15280000,0x152d0000)]
+  0x15702c00 JavaThread "AWT-Shutdown" [_thread_blocked, id=4952, stack(0x14d40000,0x14d90000)]
+  0x15700400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=6040, stack(0x152f0000,0x15340000)]
+  0x01154c00 JavaThread "Service Thread" daemon [_thread_blocked, id=7420, stack(0x14e10000,0x14e60000)]
+  0x010efc00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1128, stack(0x14e60000,0x14eb0000)]
+  0x010eec00 JavaThread "Attach Listener" daemon [_thread_blocked, id=1048, stack(0x14690000,0x146e0000)]
+  0x010ebc00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6548, stack(0x14620000,0x14670000)]
+  0x010da800 JavaThread "Finalizer" daemon [_thread_blocked, id=6180, stack(0x14790000,0x147e0000)]
+  0x010d5000 JavaThread "Reference Handler" daemon [_thread_blocked, id=1636, stack(0x14dc0000,0x14e10000)]
+=>0x018bd000 JavaThread "main" [_thread_in_vm, id=6968, stack(0x01730000,0x01780000)]
+
+Other Threads:
+  0x010d3c00 VMThread [stack: 0x14700000,0x14750000] [id=1052]
+  0x01179000 WatcherThread [stack: 0x03bb0000,0x03c00000] [id=2096]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x018bb828] AdapterHandlerLibrary_lock - owner thread: 0x018bd000
+
+Heap:
+ def new generation   total 4928K, used 771K [0x03c00000, 0x04150000, 0x09150000)
+  eden space 4416K,   5% used [0x03c00000, 0x03c40fd0, 0x04050000)
+  from space 512K, 100% used [0x040d0000, 0x04150000, 0x04150000)
+  to   space 512K,   0% used [0x04050000, 0x04050000, 0x040d0000)
+ tenured generation   total 10944K, used 604K [0x09150000, 0x09c00000, 0x13c00000)
+   the space 10944K,   5% used [0x09150000, 0x091e70c8, 0x091e7200, 0x09c00000)
+ Metaspace       used 1035K, capacity 2838K, committed 2880K, reserved 4480K
+
+Card table byte_map: [0x01800000,0x01890000] byte_map_base: 0x017e2000
+
+Polling page: 0x00190000
+
+CodeCache: size=32768Kb used=825Kb max_used=825Kb free=31943Kb
+ bounds [0x01b90000, 0x01c60000, 0x03b90000]
+ total_blobs=316 nmethods=134 adapters=114
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1.911 Thread 0x010efc00  130             java.util.HashMap::getNode (148 bytes)
+Event: 1.913 Thread 0x010efc00 nmethod 130 0x01c5cac8 code [0x01c5cc00, 0x01c5ce34]
+Event: 1.914 Thread 0x010efc00  131             java.lang.Class::getName (21 bytes)
+Event: 1.915 Thread 0x010efc00 nmethod 131 0x01c5d048 code [0x01c5d140, 0x01c5d1fc]
+Event: 1.972 Thread 0x010efc00  132             java.lang.AbstractStringBuilder::expandCapacity (50 bytes)
+Event: 1.973 Thread 0x010efc00 nmethod 132 0x01c5d588 code [0x01c5d6a0, 0x01c5d8d8]
+Event: 1.976 Thread 0x010efc00  133  s          java.util.Hashtable::put (104 bytes)
+Event: 1.979 Thread 0x010efc00 nmethod 133 0x01c5da08 code [0x01c5db50, 0x01c5dee0]
+Event: 1.993 Thread 0x010efc00  134             java.lang.reflect.Field::getName (5 bytes)
+Event: 1.994 Thread 0x010efc00 nmethod 134 0x01c5e248 code [0x01c5e340, 0x01c5e3c0]
+
+GC Heap History (2 events):
+Event: 1.815 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 4928K, used 4416K [0x03c00000, 0x04150000, 0x09150000)
+  eden space 4416K, 100% used [0x03c00000, 0x04050000, 0x04050000)
+  from space 512K,   0% used [0x04050000, 0x04050000, 0x040d0000)
+  to   space 512K,   0% used [0x040d0000, 0x040d0000, 0x04150000)
+ tenured generation   total 10944K, used 0K [0x09150000, 0x09c00000, 0x13c00000)
+   the space 10944K,   0% used [0x09150000, 0x09150000, 0x09150200, 0x09c00000)
+ Metaspace       used 951K, capacity 2836K, committed 2880K, reserved 4480K
+Event: 1.835 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 4928K, used 512K [0x03c00000, 0x04150000, 0x09150000)
+  eden space 4416K,   0% used [0x03c00000, 0x03c00000, 0x04050000)
+  from space 512K, 100% used [0x040d0000, 0x04150000, 0x04150000)
+  to   space 512K,   0% used [0x04050000, 0x04050000, 0x040d0000)
+ tenured generation   total 10944K, used 604K [0x09150000, 0x09c00000, 0x13c00000)
+   the space 10944K,   5% used [0x09150000, 0x091e70c8, 0x091e7200, 0x09c00000)
+ Metaspace       used 951K, capacity 2836K, committed 2880K, reserved 4480K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.112 Thread 0x018bd000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x03c0d848) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vß|Å¢º?
+Event: 0.112 Thread 0x018bd000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x03c0dac8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jni.cpp, l‡r^ÜäÌ?
+Event: 0.923 Thread 0x018bd000 Exception <a 'java/security/PrivilegedActionException'> (0x03e6d3b0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.923 Thread 0x018bd000 Exception <a 'java/security/PrivilegedActionException'> (0x03e6d560) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.926 Thread 0x018bd000 Exception <a 'java/security/PrivilegedActionException'> (0x03e70e80) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.926 Thread 0x018bd000 Exception <a 'java/security/PrivilegedActionException'> (0x03e71030) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.948 Thread 0x018bd000 Exception <a 'java/io/FileNotFoundException'> (0x03e7b268) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.056 Thread 0x018bd000 Exception <a 'java/io/FileNotFoundException'> (0x03e9a3d8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.405 Thread 0x018bd000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x03f59cc8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\methodHandles.cpp, line 1125]
+Event: 1.426 Thread 0x018bd000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x03f67148) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\methodHandles.cpp, line 1125]
+
+Events (10 events):
+Event: 1.938 loading class com/sun/beans/util/Cache$Kind$1
+Event: 1.938 loading class com/sun/beans/util/Cache$Kind$1 done
+Event: 1.938 loading class com/sun/beans/util/Cache$Kind$2
+Event: 1.939 loading class com/sun/beans/util/Cache$Kind$2 done
+Event: 1.939 loading class com/sun/beans/util/Cache$Kind$3
+Event: 1.939 loading class com/sun/beans/util/Cache$Kind$3 done
+Event: 1.940 loading class com/sun/beans/util/Cache$CacheEntry
+Event: 1.940 loading class com/sun/beans/util/Cache$CacheEntry done
+Event: 1.964 loading class java/awt/datatransfer/SystemFlavorMap$SoftCache
+Event: 1.965 loading class java/awt/datatransfer/SystemFlavorMap$SoftCache done
+
+
+Dynamic libraries:
+0x012d0000 - 0x01303000 	D:\Program Files\Java\jdk1.8.0_45\bin\java.exe
+0x77030000 - 0x77171000 	C:\windows\SYSTEM32\ntdll.dll
+0x76340000 - 0x76414000 	C:\windows\system32\kernel32.dll
+0x75280000 - 0x752cb000 	C:\windows\system32\KERNELBASE.dll
+0x768f0000 - 0x76990000 	C:\windows\system32\ADVAPI32.dll
+0x75640000 - 0x756ec000 	C:\windows\system32\msvcrt.dll
+0x764b0000 - 0x764c9000 	C:\windows\SYSTEM32\sechost.dll
+0x753f0000 - 0x75492000 	C:\windows\system32\RPCRT4.dll
+0x76630000 - 0x766f9000 	C:\windows\system32\USER32.dll
+0x76700000 - 0x7674e000 	C:\windows\system32\GDI32.dll
+0x77190000 - 0x7719a000 	C:\windows\system32\LPK.dll
+0x76bd0000 - 0x76c6d000 	C:\windows\system32\USP10.dll
+0x73f00000 - 0x7409e000 	C:\windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x76430000 - 0x76487000 	C:\windows\system32\SHLWAPI.dll
+0x76490000 - 0x764af000 	C:\windows\system32\IMM32.DLL
+0x771b0000 - 0x7727c000 	C:\windows\system32\MSCTF.dll
+0x615e0000 - 0x6169f000 	D:\Program Files\Java\jdk1.8.0_45\jre\bin\msvcr100.dll
+0x60dd0000 - 0x61190000 	D:\Program Files\Java\jdk1.8.0_45\jre\bin\client\jvm.dll
+0x616a0000 - 0x616a7000 	C:\windows\system32\WSOCK32.dll
+0x76e10000 - 0x76e45000 	C:\windows\system32\WS2_32.dll
+0x771a0000 - 0x771a6000 	C:\windows\system32\NSI.dll
+0x73260000 - 0x73292000 	C:\windows\system32\WINMM.dll
+0x744a0000 - 0x744a9000 	C:\windows\system32\VERSION.dll
+0x77180000 - 0x77185000 	C:\windows\system32\PSAPI.DLL
+0x61380000 - 0x6138c000 	D:\Program Files\Java\jdk1.8.0_45\jre\bin\verify.dll
+0x61350000 - 0x61371000 	D:\Program Files\Java\jdk1.8.0_45\jre\bin\java.dll
+0x61570000 - 0x61583000 	D:\Program Files\Java\jdk1.8.0_45\jre\bin\zip.dll
+0x756f0000 - 0x7633b000 	C:\windows\system32\SHELL32.dll
+0x764d0000 - 0x7662c000 	C:\windows\system32\ole32.dll
+0x75040000 - 0x7504b000 	C:\windows\system32\profapi.dll
+0x5bc80000 - 0x5bdc5000 	D:\Program Files\Java\jdk1.8.0_45\jre\bin\awt.dll
+0x76780000 - 0x7680f000 	C:\windows\system32\OLEAUT32.dll
+0x73a80000 - 0x73a93000 	C:\windows\system32\DWMAPI.DLL
+0x74f50000 - 0x74f5c000 	C:\windows\system32\CRYPTBASE.dll
+0x70d40000 - 0x70e2b000 	C:\windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: libreria.Libreria
+java_class_path (initial): D:\Mauricio\Final BD I\libreria\dist\lib\jcalendar-1.4.jar;D:\Mauricio\Final BD I\libreria\dist\lib\mysql-connector-java-5.1.23-bin.jar;D:\Mauricio\ProyectoLibreria 31_07_15\commons-codec-1.10.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\commons-beanutils-1.8.0.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\commons-collections-2.1.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\commons-digester-2.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\commons-javaflow-20060411.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\commons-logging-1.1.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\groovy-all-1.7.5.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\iText-2.1.7.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\jasperreports-4.7.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\jasperreports-applet-4.7.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\jasperreports-fonts-4.7.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\jasperreports-javaflow-4.7.1.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\jcommon-1.0.15.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\png-encoder-1.5.jar;D:\Mauricio\ProyectoLibreria 31_07_15\libreria\dist\lib\poi-3.7-20101029.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-all-1.6.3.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-all-1.6.4-javadoc.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-all-1.6.4-sources.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-all-1.6.4.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-beaninfo-1.6.2.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-beaninfo-1.6.3.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-beaninfo-1.6.4-javadoc.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-beaninfo-1.6.4-sources.jar;D:\Mauricio\Final BD I\libreria\dist\lib\swingx-beaninfo-1.6.4.jar;D:\Mauricio\Final BD 
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Windows Live\Shared;C:\Program Files\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\
+USERNAME=OLGA
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 28 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 (6.1.7601.18409)
+
+CPU:total 2 (1 cores per cpu, 2 threads per core) family 6 model 28 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht, tsc
+
+Memory: 4k page, physical 2086192k(971920k free), swap 22566192k(19570904k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.45-b02) for windows-x86 JRE (1.8.0_45-b15), built on Apr 30 2015 12:31:00 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Aug 05 19:25:28 2016
+elapsed time: 2 seconds (0d 0h 0m 2s)
+
