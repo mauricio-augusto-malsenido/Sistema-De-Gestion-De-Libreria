@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="10" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e41e641b-6cea-4dd5-9968-73e494f59a12">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IdFac" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\SEBASTIAN\\Documents\\NetBeansProjects\\libreria\\src\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select * from facturaventa;]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="565" height="100" uuid="60417e52-c621-43fb-8713-491305c6c0a1"/>
+				<subreportParameter name="idFac">
+					<subreportParameterExpression><![CDATA[$P{IdFac}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CabeceraVenta.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<summary>
+		<band height="202" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="100" width="565" height="100" uuid="dc9cc514-2897-4dfa-985b-68a1de5f1a58"/>
+				<subreportParameter name="idFac">
+					<subreportParameterExpression><![CDATA[$P{IdFac}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "pieVentas.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="0" width="565" height="100" uuid="d62733a2-483a-4fa0-962a-f8a2ca75bb2a"/>
+				<subreportParameter name="idFac">
+					<subreportParameterExpression><![CDATA[$P{IdFac}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "LineaVentas.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

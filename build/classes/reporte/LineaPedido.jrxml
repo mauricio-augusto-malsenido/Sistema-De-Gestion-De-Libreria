@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c9c39a95-efcb-4986-b1ce-75a2d753609c">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="746"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IdFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select l.TituloLibro,lp.CantidadPedido
+from lineapedido AS lp INNER JOIN libro AS l ON lp.IdLibroCompra=l.IdLibro
+where lp.IdpedidoCompra=$P{IdFac};]]>
+	</queryString>
+	<field name="TituloLibro" class="java.lang.String"/>
+	<field name="CantidadPedido" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement uuid="42673fcd-d34a-4019-94c4-ecf030626676" x="0" y="4" width="360" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="c2d7db04-9164-49a2-b94f-438195eca44c" x="21" y="5" width="100" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Libro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1a42b4c0-e363-4788-bc2e-e60230333e02" x="260" y="4" width="100" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a4a04778-675e-478f-b3ff-509553ef1eaa" x="0" y="0" width="260" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TituloLibro}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2b9540de-7840-43bb-9fbd-026caa086b7b" x="0" y="20" width="360" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="6e8f7062-81ea-4b82-b358-f399888af334" x="260" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CantidadPedido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

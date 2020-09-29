@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="858ba7e0-9a6f-421e-832a-5b7414eb7ce5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.idPedidoCompra,p.FechaPedido,pr.NombreProveedor
+from pedidocompra AS p INNER JOIN proveedor AS pr ON p.IdProveedorCompra=pr.IdProveedor
+where p.idPedidoCompra=$P{idFac}]]>
+	</queryString>
+	<field name="idPedidoCompra" class="java.lang.Integer"/>
+	<field name="FechaPedido" class="java.sql.Date"/>
+	<field name="NombreProveedor" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="159" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement uuid="b75d72b7-e70b-40d1-98de-58a1cd186303" x="0" y="0" width="595" height="128"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="ac9b9492-ef51-43b4-88d8-f4a32e3a8e64" x="0" y="128" width="595" height="26"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="f8fe882c-162e-4437-9911-98f524690491" x="328" y="134" width="68" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Proveedor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="81137afc-4da7-4439-a7e2-b0ff3cf196d0" x="396" y="134" width="141" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NombreProveedor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="692b8ba8-a5ee-4e03-a49d-13388fadb635" x="11" y="134" width="68" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[N° Pedido:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7c880b9-8fda-4bd9-95d8-e78776854fdc" x="156" y="134" width="57" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="712dd280-3a35-44d6-ab38-cee57b922567" x="213" y="134" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1c5804aa-75d3-48a5-a7f8-4c5d9646be9f" x="79" y="134" width="65" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idPedidoCompra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6c5d27ba-0537-4e07-ac4f-a83aef51ce02" x="259" y="24" width="268" height="74"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Libreria El Quijote
+Calle Sin Nombre 123
+San Miguel de Tucuman 
+Tucuman - Argentina
+Cp:4000
+Tel: 0303456								]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="f0fd77bc-ebda-4b4b-b18c-6b58dc7c11aa" x="11" y="11" width="182" height="117"/>
+				<imageExpression><![CDATA["C:\\Users\\SEBASTIAN\\Documents\\NetBeansProjects\\libreria\\src\\recursos\\l quijote.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>
