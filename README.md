@@ -17,6 +17,6 @@ Dicho sistema esta compuesto de los siguientes módulos:
 - MODULO DE GESTIÓN DE COMPRAS: Con este módulo, se tendrá la posibilidad generar reportes de las compras realizadas por la librería en base a una lista de facturas emitidas. Dicha lista se podrá filtrar por proveedor, estado o libro comprado y a su vez, de forma combinada, delimitarse a un rango de fechas específico.
 
 Dicha aplicación fue desarrollada utilizando las siguientes tecnologías:
-Herramienta de desarrollo: NetBeans IDE 8.2
-Lenguaje de base: Java
-Motor de base de datos: Microsoft SQL Server 2016
+- Herramienta de desarrollo: NetBeans IDE 8.2
+- Lenguaje de base: Java
+- Motor de base de datos: Microsoft SQL Server 2016
