@@ -1,4 +1,4 @@
-# Sistema-De-Gestion-De-Libreria
+# Sistema De Gestion De Libreria
 Aplicación de escritorio Java que permite a la libreria gestionar de forma simple y sencilla las compras y ventas de sus libros.
 
 Dicho sistema esta compuesto de los siguientes módulos:
